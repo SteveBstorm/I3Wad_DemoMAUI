@@ -1,0 +1,23 @@
+﻿@page "/demo1"
+<h3>Demo1</h3>
+<p>@Number</p> @*One Way Binding : Lecture de propriétés*@
+<button class="btn btn-outline-info" 
+        @onclick="Increment"
+        disabled="@(Number > 9)">+</button>
+@*Event Binding : Déclencher une méthode sur un event JS*@
+<button class="btn btn-outline-danger" 
+        @onclick="Decrement"
+        disabled="@(Number < 0)">-</button>
+@*Attribute Binding : Permet de lier une expression booléene 
+    ou une valeur à un attribut HTML
+*@
+<hr />
+<input type="number" @bind-value="Value" />
+<button @onclick="AddValue">Ajouter</button>
+@*Two-Ways Binding : Lecture + Ecriture d'une propriété*@
+<ul>
+    @for(int i = 0; i < 10; i++)
+    {
+        <li>@i</li>
+    }
+</ul>
