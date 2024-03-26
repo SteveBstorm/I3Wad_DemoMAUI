@@ -1,0 +1,11 @@
+﻿<h3>Bonjour @Prenom, Voici la question @(Compteur + 1)</h3>
+
+<p>@QuestionEnCours</p>
+
+<p>
+    <button class="btn btn-success" 
+            @onclick="() => Repondre(true)">Oui</button>
+    <button class="btn btn-danger" 
+            @onclick="() => Repondre(false)">Non</button>
+</p>
+

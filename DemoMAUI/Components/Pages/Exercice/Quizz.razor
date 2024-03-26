@@ -1,0 +1,34 @@
+﻿@page "/quizz"
+<h3>Quizz</h3>
+
+
+
+@if (!string.IsNullOrEmpty(Prenom))
+{
+    if (!PartieTerminee)
+    {
+        <Question Prenom="@Prenom"
+                  EnvoiReponse="EnregisterReponse"
+                  PartieFinie="ChangerEtatPartie">
+        </Question>
+    }
+    else
+    {
+        <h4>Voici vos réponses</h4>
+        <ul>
+            @foreach(string rep in Reponse)
+            {
+                <li>@rep</li>
+            }
+        </ul>
+        <h3>Merci d'avoir participer</h3>
+    }
+
+}
+else
+{
+    <p>
+        Votre prénom :
+        <input type="text" @bind-value="Prenom" />
+    </p>
+}

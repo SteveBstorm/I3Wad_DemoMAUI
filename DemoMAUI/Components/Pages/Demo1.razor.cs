@@ -13,6 +13,7 @@ namespace DemoMAUI.Components.Pages
 
         public void AddValue()
         {
+            
             Number += Value;
         }
         public void Increment()
